@@ -1,0 +1,22 @@
+{
+  "name": "parcial2arquitectura",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^16.10.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node .",
+    "dev": "ts-node-dev --respawn index.ts"
+  },
+  "author": "",
+  "license": "ISC"
+}
