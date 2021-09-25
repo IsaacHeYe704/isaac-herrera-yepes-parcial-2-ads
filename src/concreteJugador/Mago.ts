@@ -4,11 +4,13 @@ export class Mago implements jugador {
     talentos: number;
     maxVida: number
     nombre:String
+    multiplicadorEntrenamiento: number
     constructor(nombre) {
         this.nombre= nombre
         this.maxVida = 10;
         this.vida = this.maxVida;
         this.talentos = 5;
+        this.multiplicadorEntrenamiento = 0.40
     }
     mostrarStats() {
         const texto:String = `el Mago ${this.nombre.toUpperCase()} tiene ${this.vida} puntos de vida y ${this.talentos} talentos por gastar`
@@ -19,7 +21,7 @@ export class Mago implements jugador {
         const probabilidadDeEntrenar:Number=(Math.random());
         const talentosAntes = this.talentos;
         const vidaAntes = this.vida;
-        if(probabilidadDeEntrenar>=0.45)
+        if(probabilidadDeEntrenar>=this.multiplicadorEntrenamiento)
         {
             this.talentos = this.talentos + 10
             this.vida = this.maxVida;
@@ -47,5 +49,9 @@ export class Mago implements jugador {
           }, 1500);
         }
         
+    }
+    gastar(talentosGastados)
+    {
+        this.talentos -=  talentosGastados;
     }
 }

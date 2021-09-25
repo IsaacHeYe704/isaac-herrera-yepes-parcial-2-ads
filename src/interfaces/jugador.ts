@@ -6,4 +6,6 @@ export interface jugador {
     entrenar(): void
     recibirDaño(Number):void;
     mostrarStats():void;
+    gastar(number):void;
+    multiplicadorEntrenamiento:number
 }

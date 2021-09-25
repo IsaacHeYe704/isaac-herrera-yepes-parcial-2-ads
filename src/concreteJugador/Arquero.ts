@@ -4,12 +4,15 @@ export class Arquero implements jugador {
     talentos: number
     maxVida: number
     nombre:String
+    multiplicadorEntrenamiento: number;
     constructor(nombre:String) {
         this.nombre= nombre
         this.maxVida = 12;
         this.vida = this.maxVida;
         this.talentos = 2;
+        this.multiplicadorEntrenamiento = 0.4;
     }
+    
     
     mostrarStats() {
         const texto:String = `el arquero ${this.nombre.toUpperCase()} tiene ${this.vida} puntos de vida y ${this.talentos} talentos por gastar`
@@ -20,7 +23,7 @@ export class Arquero implements jugador {
         const probabilidadDeEntrenar:Number=(Math.random());
         const talentosAntes = this.talentos;
         const vidaAntes = this.vida;
-        if(probabilidadDeEntrenar>=0.5)
+        if(probabilidadDeEntrenar>=this.multiplicadorEntrenamiento)
         {
             this.talentos = this.talentos + 15
             this.vida = this.maxVida;
@@ -48,5 +51,9 @@ export class Arquero implements jugador {
           }, 1500);
         }
         
+    }
+    gastar(talentosGastados)
+    {
+        this.talentos -=  talentosGastados;
     }
 }

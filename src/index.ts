@@ -2,14 +2,19 @@ import { jugador } from "./interfaces/jugador";
 import { JugadorConcreteFactory } from "./jugadorFactory/JugadorConcreteFactory";
 import { SelectMenus } from "./selectMenus";
 import * as readline from "readline";
+import { ArmaduraDecorator } from "../decorators/ArmaduraDecorator";
+import { CascoDecorator } from "../decorators/CascoDecorator";
+import { Mago } from "./concreteJugador/Mago";
+import { Tienda } from "../Tienda";
 class Game {
   gameName: String;
   playing: boolean;
   cl: any;
   rl: any;
   tipoDeJugador: Number;
-  menu: string = `Te debes enfrentar a un moustruo con \x1b[31m 69 \x1b[0m de ataque, cual es tu decicion?: \n
-  1)entrenar(recuperas vida y es probable que ganes talento para comprar equipamento)
+  dañoEnemiGo: number=15;
+  menu: string = `Te debes enfrentar a un moustruo con \x1b[31m ${this.dañoEnemiGo} \x1b[0m de ataque, cual es tu decicion?: \n
+  1)entrenar( es probable recuperes vida y que ganes talento para comprar equipamento)
   2)tienda(comprar equipamento, se usa talento)
   3)atacar
   4)rendirte :( \n`;
@@ -17,6 +22,7 @@ class Game {
   readLine: any;
   //el jugador es de tipo interface jugador por lo que no importa de que tipo sea este
   elJugador: jugador;
+  tienda: Tienda;
 
   constructor(gameName: String) {
     this.gameName = gameName;
@@ -28,6 +34,7 @@ class Game {
     });
     this.startMenu = new SelectMenus(this.rl);
     this.run();
+    
   }
   async run() {
     console.clear();
@@ -64,11 +71,23 @@ class Game {
       }
       case 2: {
         //implementar tienda
+        this.tienda = new Tienda(this.rl);
+        await this.tienda.mostrarTienda(this.elJugador).then((jugador)=>{
+          this.elJugador = jugador;
+        });
         
         break;
       }
       case 3: {
-        this.elJugador.recibirDaño(2);
+        this.elJugador.recibirDaño(this.dañoEnemiGo);
+        if(this.dañoEnemiGo-this.elJugador.vida >10)
+        {
+          this.dañoEnemiGo += 20;
+        }else
+        {
+          console.log("\x1b[31m","oh no el moustruo ha regresado mas fuerte! ","\x1b[0m");
+        }
+        
         break;
       }
       case 4: {
