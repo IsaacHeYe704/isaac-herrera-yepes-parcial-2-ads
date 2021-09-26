@@ -12,10 +12,11 @@ a su vez en este tipo de juegos se suele entrenar para consaeguir dinero o mejor
 ### detalles tecnicos:
 para desarrollar esto se uso como lenguaje: TYPESCRIPT en el ide VISUALSTUDIOCODE. 
 ### como ejecutar?: 
+recomiendo correrlo desde la consola de windos, pero sirve perfectamente desde la terminal de vs code.
 para ejecutar el programa deben seguir los siguientes dos pasos:
 1. entrar en la carpeta src
 2. descargar las librerias usadas---> correr el comando dentro de la carpeta src: npm i 
-3. iniciar el programa---> correr el comando dentro de la carpeta src: npm run start
+3. iniciar el programa---> correr el comando dentro de la carpeta src: npm run dev
 
 ## PATRONES DE DISEÑO USADOS: 
 ### 1) PATRON FACTORY:
