@@ -56,13 +56,13 @@ en estas lineas retorno un nuevo jugador pero decorado, con los decorators armad
 2) archivo: interfaces/jugador.ts
 en este archivo defino como es un jugador sin importar su implementacion concreta. 
 
-3)archivo: decorators/JugadorDecorator.ts
+3) archivo: decorators/JugadorDecorator.ts
 este archivo es una clase abstracta de la cual extienden cada decorador. 
 
-4)archivo: decorators/ArmaduraDecorator.ts
+4) archivo: decorators/ArmaduraDecorator.ts
 este archivo define como es el decorador de la armadura para un jugador,l lo que hace es mostrar que el jugador tiene una armadura en consola cuando se llame a jugador.mostrarStats() y  a;ade la posibilidad de un 20% de esquivar el da;o cuando se llame a jugador.recibirDa;o().
 
-5)4)archivo: decorators/CascoDecorator.ts
+5) archivo: decorators/CascoDecorator.ts
 este archivo define como es el decorador de un casco para un jugador,lo que hace es mostrar que el jugador tiene un casco en consola cuando se llame a jugador.mostrarStats() y  reduce a la mitad el da;o cuando se llame a jugador.recibirDa;o().
 
 
