@@ -2,7 +2,7 @@ import { jugador } from "./interfaces/jugador";
 import { JugadorConcreteFactory } from "./jugadorFactory/JugadorConcreteFactory";
 import { SelectMenus } from "./selectMenus";
 import * as readline from "readline";
-import { Tienda } from "../Tienda";
+import { Tienda } from "./Tienda";
 class Game {
   gameName: String;
   playing: boolean;
@@ -77,12 +77,20 @@ class Game {
       }
       case 3: {
         this.elJugador.recibirDaño(this.dañoEnemiGo);
-        if(this.dañoEnemiGo-this.elJugador.vida >10)
+        console.log(`this.dañoEnemiGo-this.elJugador.getVida()`, this.dañoEnemiGo-this.elJugador.getVida())
+        if(this.dañoEnemiGo-this.elJugador.getVida() <20)
         {
-          this.dañoEnemiGo += 20;
+          console.log("\x1b[31m", `ganaste!!!!!!`);
+          this.tomarDecision(5);
         }else
         {
           console.log("\x1b[31m","oh no el moustruo ha regresado mas fuerte! ","\x1b[0m");
+          this.dañoEnemiGo += 20;
+          this.menu = `Te debes enfrentar a un moustruo con \x1b[31m ${this.dañoEnemiGo} \x1b[0m de ataque, cual es tu decicion?: \n
+            1)entrenar( es probable recuperes vida y que ganes talento para comprar equipamento)
+            2)tienda(comprar equipamento, se usa talento)
+            3)atacar
+            4)rendirte :( \n`
         }
         
         break;
@@ -97,6 +105,20 @@ class Game {
           process.exit();
         }, 1500);
         break;
+      
+      }
+      case 5:{
+        
+        let n: NodeJS.Timeout;
+      console.clear();
+      console.log("\x1b[31m", `ganaste!!!!!!`);
+      console.log("\x1b[31m", `el juego ha terminado....`);
+      n = await setTimeout(() => {
+        console.clear();
+        this.playing = false;
+        process.exit();
+      }, 1500);
+      break;
       }
       default: {
         console.clear();

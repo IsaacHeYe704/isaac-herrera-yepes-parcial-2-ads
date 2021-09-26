@@ -12,6 +12,17 @@ export class Arquero implements jugador {
         this.talentos = 2;
         this.multiplicadorEntrenamiento = 0.4;
     }
+    setVidaMax(newMax: any): void {
+        this.maxVida += newMax
+        this.vida = this.maxVida;
+    }
+    getTalentos(): number {
+        return this.talentos;
+    }
+    getVida()
+    {
+        return this.vida;
+    }
     
     
     mostrarStats() {

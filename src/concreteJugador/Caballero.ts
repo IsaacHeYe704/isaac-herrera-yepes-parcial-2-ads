@@ -12,6 +12,17 @@ export class Caballero implements jugador {
         this.talentos = 0;
         this.multiplicadorEntrenamiento = 0.35
     }
+    getTalentos(): number {
+        return this.talentos;
+    }
+    setVidaMax(newMax: any): void {
+        this.maxVida += newMax
+        this.vida = this.maxVida;
+    }
+    getVida()
+    {
+        return this.vida;
+    }
     mostrarStats() {
         const texto:String = `el Caballero ${this.nombre.toUpperCase()} tiene ${this.vida} puntos de vida y ${this.talentos} talentos por gastar`
         console.log("\x1b[42m", (texto),"\x1b[0m")

@@ -7,5 +7,8 @@ export interface jugador {
     recibirDaño(Number):void;
     mostrarStats():void;
     gastar(number):void;
-    multiplicadorEntrenamiento:number
+    multiplicadorEntrenamiento:number;
+    getTalentos():number;
+    setVidaMax(number ):void;
+    getVida():number;
 }

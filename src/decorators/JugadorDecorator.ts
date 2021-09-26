@@ -11,8 +11,16 @@ export abstract class jugadorDecorator implements jugador {
         this.elJugador = elJugador;
         
     }
-    
-   
+    getTalentos(): number {
+        return this.elJugador.getTalentos();
+    }
+    setVidaMax(newMax: any): void {
+        return this.elJugador.setVidaMax(newMax);
+    }
+    getVida()
+    {
+        return this.elJugador.getVida();
+    }
     
     entrenar(): void {
         return this.elJugador.entrenar();
