@@ -2,9 +2,6 @@ import { jugador } from "./interfaces/jugador";
 import { JugadorConcreteFactory } from "./jugadorFactory/JugadorConcreteFactory";
 import { SelectMenus } from "./selectMenus";
 import * as readline from "readline";
-import { ArmaduraDecorator } from "../decorators/ArmaduraDecorator";
-import { CascoDecorator } from "../decorators/CascoDecorator";
-import { Mago } from "./concreteJugador/Mago";
 import { Tienda } from "../Tienda";
 class Game {
   gameName: String;
