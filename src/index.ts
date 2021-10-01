@@ -1,4 +1,4 @@
-import { jugador } from "./interfaces/jugador";
+import { jugador } from "./interfaces/Jugador";
 import { JugadorConcreteFactory } from "./jugadorFactory/JugadorConcreteFactory";
 import { SelectMenus } from "./selectMenus";
 import * as readline from "readline";

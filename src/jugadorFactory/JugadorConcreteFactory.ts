@@ -1,7 +1,7 @@
 import { Arquero } from "../concreteJugador/Arquero";
 import { Caballero } from "../concreteJugador/Caballero";
 import { Mago } from "../concreteJugador/Mago";
-import { jugador } from "../interfaces/jugador";
+import { jugador } from "../interfaces/Jugador";
 import { jugadorAbstractFactory } from "./JugadorAbstractFactory";
 
 export class JugadorConcreteFactory extends jugadorAbstractFactory {

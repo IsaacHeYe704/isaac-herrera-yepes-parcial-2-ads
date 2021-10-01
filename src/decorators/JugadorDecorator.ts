@@ -1,4 +1,4 @@
-import { jugador } from "../interfaces/jugador";
+import { jugador } from "../interfaces/Jugador";
 
 export abstract class jugadorDecorator implements jugador {
     elJugador: jugador;

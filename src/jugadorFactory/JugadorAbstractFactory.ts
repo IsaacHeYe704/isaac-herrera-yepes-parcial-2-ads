@@ -1,4 +1,4 @@
-import {jugador} from "../interfaces/jugador";
+import {jugador} from "../interfaces/Jugador";
 
 export abstract class jugadorAbstractFactory {
     abstract crearJugador(Number,String):jugador

@@ -1,4 +1,4 @@
-import {jugador} from "../interfaces/jugador";
+import {jugador} from "../interfaces/Jugador";
 export class Caballero implements jugador {
     vida:number
     talentos: number

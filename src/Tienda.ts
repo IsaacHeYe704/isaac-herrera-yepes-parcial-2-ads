@@ -1,6 +1,6 @@
 import { ArmaduraDecorator } from "./decorators/ArmaduraDecorator";
 import { CascoDecorator } from "./decorators/CascoDecorator";
-import { jugador } from "./interfaces/jugador";
+import { jugador } from "./interfaces/Jugador";
 
 export class Tienda {
   elJugador: jugador;
